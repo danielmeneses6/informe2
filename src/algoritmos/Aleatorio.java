@@ -24,7 +24,7 @@ public class Aleatorio {
         int suma=0;
         for(int i=0;i<t;i++)
         {
-            aleatorio= (int)(Math.random()*100);
+            aleatorio= (int)(Math.random()*10);
             arreglo[i]=aleatorio;
             contador=arreglo.length;
         }
@@ -47,8 +47,8 @@ public class Aleatorio {
                     suma=suma+arreglo[i];
                     
                 }
-                System.out.println("la media aproximada es: ");
-                    System.out.println(suma/arreglo.length);
+                System.out.println("la media es: ");
+                    System.out.println((float)suma/arreglo.length);
                     System.out.println("para la mediana se ordena el arreglo: ");
                     Arrays.sort(arreglo);
                     for(int i=0;i<arreglo.length;i++)
@@ -57,26 +57,75 @@ public class Aleatorio {
                 }
                 System.out.println(" ");
                     System.out.println("siendo esta el numero de la mitad en caso de ser impar la longitud del arreglo, pero el promedio de los numeros centrales en caso de ser par el arreglo");
-                    if(arreglo.length %2 !=0)
+                    if(arreglo.length %2 == 0)
                     {
-                        System.out.println("la mediana es: "+arreglo[(int)0.5+(arreglo.length/2)]);
+                        System.out.println("la mediana es: "+(float)((arreglo[arreglo.length/2])+((arreglo[(arreglo.length/2)-1])))/2);
                     }
                     else
                     {
-                        System.out.println("la mediana es: "+((arreglo[arreglo.length/2])+((arreglo[arreglo.length/2])+1))/2);
+                        System.out.println("la mediana es: "+arreglo[(int)0.5+(arreglo.length/2)]);
                     }
                 break;
             case 2:
-                
+                 for(int i=0;i<arreglo.length;i++)
+                {
+                    suma=suma+arreglo[i];
+                }
+                float media=(float)suma/arreglo.length;
+                suma=0;
+                for(int i=0;i<arreglo.length;i++)
+                {
+                    suma=(int)(suma+(Math.pow(arreglo[i]-media,2)));
+                }
+                System.out.println("la varianza es: "+suma/arreglo.length);
                 break;
             case 3:
-                
+     for(int i=0;i<arreglo.length;i++)
+                {
+                    suma=suma+arreglo[i];
+                }
+                media=(float)suma/arreglo.length;
+                suma=0;
+                for(int i=0;i<arreglo.length;i++)
+                {
+                    suma=(int)(suma+(Math.pow(arreglo[i]-media,2)));
+                }
+                System.out.println("la desviacion estandar es: "+Math.sqrt(suma/arreglo.length));
                 break;
             case 4:
-                
-                break;
+            int moda = 0;
+            int frecuenciaModa = 0;
+            int numerodemodas=1;
+
+            for (int i = 0; i < arreglo.length; i++) {
+            int frecuencia = 0;
+             for (int j = 0; j < arreglo.length; j++) {
+            if (arreglo[j] == arreglo[i]) {
+                frecuencia++;
+            }
+            }
+            if (frecuencia > frecuenciaModa) {
+            frecuenciaModa = frecuencia;
+            moda = arreglo[i];
+            }
+            if(frecuenciaModa==numerodemodas)
+            {
+                numerodemodas++;
+            }
+            }
+            if (frecuenciaModa == 1) {
+            System.out.println("No hay moda en el conjunto de datos");
+            }
+            else
+                if(numerodemodas==frecuenciaModa)
+            {
+                System.out.println("existe mas de una moda");
+            }
+            else
+                    System.out.println("la moda es: "+moda);
+            break;
             default:
-                
+                System.out.println("opcion incorrecta");
                 break;
         }
         
