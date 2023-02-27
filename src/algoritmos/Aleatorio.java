@@ -5,18 +5,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Aleatorio {
-    int tamaño,contador;
     Scanner leer1= new Scanner(System.in);
-    public Aleatorio(int t,int c)
-    {
-        tamaño=t;
-        contador=c;
-    }
-    public Aleatorio()
-    {
-        tamaño=0;
-        contador=0;
-    }
     public void llenar(int t)
     {
         int aleatorio=0, opcion1=0;
@@ -26,7 +15,7 @@ public class Aleatorio {
         {
             aleatorio= (int)(Math.random()*10);
             arreglo[i]=aleatorio;
-            contador=arreglo.length;
+           
         }
         System.out.println("el arreglo aleatorio tiene los siguientes valores: ");
         for(int i=0;i<arreglo.length;i++)

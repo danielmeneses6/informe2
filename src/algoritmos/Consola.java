@@ -9,6 +9,7 @@ public class Consola {
       int opt=1,opcion1;
         do{
             Aleatorio objetoa=new Aleatorio();
+            Caracteres objetob=new Caracteres();
           Scanner leer= new Scanner(System.in);
            System.out.println("===MENU DE USUARIO===");
         System.out.println("1.estadistica de un arreglo con numeros aleatorios");
@@ -26,7 +27,7 @@ public class Consola {
                 }while(opcion1!=0);
                 break;
             case 2:
-                
+                objetob.inverso();
                 break;
             case 3:
                 
