@@ -10,6 +10,7 @@ public class Consola {
         do{
             Aleatorio objetoa=new Aleatorio();
             Caracteres objetob=new Caracteres();
+            metodos objetoc=new metodos();
           Scanner leer= new Scanner(System.in);
            System.out.println("===MENU DE USUARIO===");
         System.out.println("1.estadistica de un arreglo con numeros aleatorios");
@@ -30,7 +31,12 @@ public class Consola {
                 objetob.inverso();
                 break;
             case 3:
-                
+                System.out.println("ingrese el tamaño del arreglo: ");
+                int tam1=leer.nextInt();
+                objetoc.burbuja(tam1);
+                objetoc.mergesort();
+                objetoc.insercion(tam1);
+                objetoc.seleccion(tam1);
                 break;
         }
       }while(opt!=0);
