@@ -1,4 +1,4 @@
-
+//quiero dejar que todos los arreglos se escriban con la funcion tostring que se uso en mergesort
 package algoritmos;
 
 import java.util.Arrays;

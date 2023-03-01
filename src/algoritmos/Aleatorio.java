@@ -1,4 +1,4 @@
-
+//s podrian comprobar los resultados pero terminada
 package algoritmos;
 
 import java.util.Scanner;
