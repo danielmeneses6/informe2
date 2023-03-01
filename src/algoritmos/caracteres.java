@@ -12,29 +12,29 @@ public class Caracteres {
          int frecuencia = 0;
          int frecuenciacmr=0;
          char caract1=0;
-         int numerodemodas=2;
-         for (int i = 0; i < caract.length; i++) {
+         int numerodemodas=0;
+         for (int i = 0; i <caract.length; i++) {
+             frecuencia=0;
              for (int j = 0; j < caract.length; j++) {
-            if (caract[j] == caract[i]) {
+            if (caract[i] == caract[j]) {
                 frecuencia++;
             }
             }
-              if (frecuencia > frecuenciacmr) {
-                frecuenciacmr = frecuencia;
-                caract1 = caract[i];
-                
-            }
-               if(frecuenciacmr==numerodemodas)
+             if(frecuencia==frecuenciacmr)
             {
                 numerodemodas++;
             }
-               
+              if (frecuencia > frecuenciacmr)
+              {
+                frecuenciacmr = frecuencia;
+                caract1 = caract[i];
+            } 
             }
          if (frecuenciacmr == 1) {
             System.out.println("No hay dato que se repita mas veces");
             }
             else
-                if(numerodemodas==frecuenciacmr)
+                if(numerodemodas>=2)
             {
                 System.out.println("hay mas de un caracter que se repite, se tomará: "+caract1);
                 System.out.println("la linea al reemplazar las vocales seria: ");

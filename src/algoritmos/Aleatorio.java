@@ -29,6 +29,7 @@ public class Aleatorio {
                  System.out.println("3.desviacion estandar");
                  System.out.println("4. moda");
                   opcion1=leer1.nextInt();
+                  
         switch (opcion1) {
             case 1:
                 for(int i=0;i<arreglo.length;i++)

@@ -2,6 +2,7 @@
 package algoritmos;
 
 import java.util.Scanner;
+import java.lang.System;
 public class Consola {
 
   
@@ -33,12 +34,33 @@ public class Consola {
             case 3:
                 System.out.println("ingrese el tamaño del arreglo: ");
                 int tam1=leer.nextInt();
+                System.out.println("ingrese una opcion: ");
+                System.out.println("1. ordenar arreglo por metodo burbuja: ");
+                System.out.println("2. ordenar arreglo por metodo margesort: ");
+                System.out.println("3. ordenar arreglo por metodo de insercion");
+                System.out.println("4. ordenar arreglo por metodo de seleccion: ");
+                int opt1=leer.nextInt();
+                switch(opt1)
+                {
+                    case 1: 
                 objetoc.burbuja(tam1);
-                objetoc.mergesort();
+                break;
+                    case 2:
+                objetoc.mergesort(tam1);
+                break;
+                    case 3:
                 objetoc.insercion(tam1);
+                break;
+                    case 4: 
                 objetoc.seleccion(tam1);
                 break;
+                }
+                break;
         }
+            System.out.println("desea realizar otra operacion? ");
+            System.out.println("1. si");
+            System.out.println("0. salir");
+            opt=leer.nextInt();
       }while(opt!=0);
     }
     
